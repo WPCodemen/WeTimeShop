@@ -62,7 +62,6 @@ function getGoodsSpecImg($goods_id,$item_id){
     if (empty($specImg)) {
         return '';
     }
-
     return $specImg;
 }
 
