@@ -3,11 +3,11 @@ return	array(
 	'system'=>array('name'=>'系统','child'=>array(
 				array('name' => '设置','child' => array(
 						array('name'=>'商城设置','act'=>'index','op'=>'System'),
-						array('name'=>'支付方式','act'=>'index1','op'=>'System'),
+						// array('name'=>'支付方式','act'=>'index1','op'=>'System'),
 						array('name'=>'地区&配送','act'=>'region','op'=>'Tools'),
 						array('name'=>'短信模板','act'=>'index','op'=>'SmsTemplate'),
-						array('name'=>'接口对接','act'=>'index3','op'=>'System'),
-						array('name'=>'验证码设置','act'=>'index4','op'=>'System'),
+						// array('name'=>'接口对接','act'=>'index3','op'=>'System'),
+						// array('name'=>'验证码设置','act'=>'index4','op'=>'System'),
 						array('name'=>'自定义导航栏','act'=>'navigationList','op'=>'System'),
 						array('name'=>'友情链接','act'=>'linkList','op'=>'Article'),
 						array('name'=>'清除缓存','act'=>'cleanCache','op'=>'System'),
@@ -22,7 +22,7 @@ return	array(
 						array('name'=>'充值记录','act'=>'recharge','op'=>'User'),
 						array('name'=>'提现申请','act'=>'withdrawals','op'=>'User'),
 						array('name'=>'汇款记录','act'=>'remittance','op'=>'User'),
-						array('name'=>'会员整合','act'=>'integrate','op'=>'User'),
+						// array('name'=>'会员整合','act'=>'integrate','op'=>'User'),
 						array('name'=>'会员签到','act'=>'signList','op'=>'User'),
 				)),
 				array('name' => '广告图','child' => array(
@@ -33,10 +33,10 @@ return	array(
 						array('name' => '留言板', 'act'=>'leaveWord', 'op'=>'Article'),
 						array('name' => '文章列表', 'act'=>'articleList', 'op'=>'Article'),
 						array('name' => '文章分类', 'act'=>'categoryList', 'op'=>'Article'),
-						array('name' => '帮助管理', 'act'=>'help_list', 'op'=>'Article'),
+						// array('name' => '帮助管理', 'act'=>'help_list', 'op'=>'Article'),
 						array('name'=>'友情链接','act'=>'linkList','op'=>'Article'),
 						array('name' => '会员协议', 'act'=>'agreement', 'op'=>'Article'),
-						array('name' => '公告管理', 'act'=>'notice_list', 'op'=>'Article'),
+						// array('name' => '公告管理', 'act'=>'notice_list', 'op'=>'Article'),
 						array('name' => '专题列表', 'act'=>'topicList', 'op'=>'Topic'),
 				)),
 
@@ -86,10 +86,10 @@ return	array(
 					array('name' => '退换货', 'act'=>'return_list', 'op'=>'Order'),
 					array('name' => '添加订单', 'act'=>'add_order', 'op'=>'Order'),
 					array('name' => '订单日志','act'=>'order_log','op'=>'Order'),
-					array('name' => '发票管理','act'=>'index', 'op'=>'Invoice'),
+					// array('name' => '发票管理','act'=>'index', 'op'=>'Invoice'),
 			        array('name' => '拼团列表','act'=>'team_list','op'=>'Team'),
 			        array('name' => '拼团订单','act'=>'order_list','op'=>'Team'),
-			        array('name' => '上门自提','act'=>'index','op'=>'ShopOrder'),
+			        // array('name' => '上门自提','act'=>'index','op'=>'ShopOrder'),
 			)),
 			array('name' => '促销','child' => array(
 					array('name' => '抢购管理', 'act'=>'flash_sale', 'op'=>'Promotion'),
@@ -102,13 +102,13 @@ return	array(
 					array('name' => '搭配购管理','act'=>'index', 'op'=>'Combination'),
 			)),
 			
-			array('name' => '分销','child' => array(
+			/*array('name' => '分销','child' => array(
 					array('name' => '分销商品列表', 'act'=>'goods_list', 'op'=>'Distribut'),
 					array('name' => '分销商列表', 'act'=>'distributor_list', 'op'=>'Distribut'),
 					array('name' => '分销关系', 'act'=>'tree', 'op'=>'Distribut'),
 					array('name' => '分销商等级', 'act'=>'grade_list', 'op'=>'Distribut'),
 					array('name' => '分成日志', 'act'=>'rebate_log', 'op'=>'Distribut'),
-			)),
+			)),*/
 	     
     	    array('name' => '微信','child' => array(
     	        array('name' => '公众号配置', 'act'=>'index', 'op'=>'Wechat'),
