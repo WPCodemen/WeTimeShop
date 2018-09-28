@@ -1,0 +1,174 @@
+<include file="public/layout" />
+<style>
+    td{height:40px;line-height:40px; padding-left:20px;}
+    .span_1{
+        float:left;
+        margin-left:0px;
+        height:130px;
+        line-height:130px;
+    }
+    .span_1 ul{list-style:none;padding:0px;}
+    .span_1 ul li{
+        border:1px solid #CCC;
+        height:40px;
+        padding:0px 10px;
+        margin-left:-1px;
+        margin-top:-1px;
+        line-height:40px;
+    }
+</style>
+<body style="background-color: #FFF; overflow: auto;">
+<div id="toolTipLayer" style="position: absolute; z-index: 9999; display: none; visibility: visible; left: 95px; top: 573px;"></div>
+<div id="append_parent"></div>
+<div id="ajaxwaitid"></div>
+<div class="page">
+    <div class="fixed-bar">
+        <div class="item-title">
+            <div class="subject">
+                <h3>审核会员积分提现</h3>
+                <h5>网站系统会员管理审核会员积分提现</h5>
+            </div>
+        </div>
+    </div>
+    <form class="form-horizontal" id="user_form" method="post">
+        <input type="hidden" name="wp_id" value="{$recorder.wp_id}">
+        <div class="ncap-form-default">
+            <dl class="row">
+                <dt class="tit">
+                    <label>用户名</label>
+                </dt>
+                <dd class="opt">
+                    <input class="input-txt valid" id="user_name" readonly="readonly"  value="{$recorder.user_name}" type="text">
+
+                </dd>
+            </dl>
+
+            <dl class="row" id="panda">
+                <dt class="tit">
+                    <label>账号类型</label>
+                </dt>
+                <dd class="opt">
+                    <if condition="$recorder['type'] == 'alipay'"><span>支付宝</span>
+                    <else> <span>微信</span>
+                    </if>
+
+                </dd>
+            </dl>
+            <dl class="row">
+                <dt class="tit">
+                    <label>打款账户</label>
+                </dt>
+                <dd class="opt">
+                    <input class="input-txt valid" id="account" readonly="readonly"  value="{$recorder.account}" type="text">
+
+                </dd>
+            </dl>
+            <dl class="row" id="phgm">
+                <dt class="tit">
+                    <label>申请积分</label>
+                </dt>
+                <dd class="opt">
+                    <input class="input-txt valid" id="points" readonly="readonly" value="{$recorder.points}" type="text">
+
+                </dd>
+            </dl>
+            <dl class="row">
+                <dt class="tit">
+                    <label>积分转换人民币</label>
+                </dt>
+                <dd class="opt">
+                    <input class="input-txt valid" id="rmb_money" readonly="readonly" value="{$recorder.rmb_money}" type="text">
+                </dd>
+            </dl>
+
+            <dl class="row">
+                <dt class="tit">
+                    <label>审核状态</label>
+                </dt>
+                <dd class="opt">
+                    <input type="hidden" id="ttype" name="astatus" value="{$recorder.status}">
+                    <select id="t_type" name="status" onchange="changetype()">
+                        <option value="">请选择</option>
+                        <option value="0">未审核</option>
+                        <option value="1">审核中</option>
+                        <option value="2">审核通过</option>
+                        <option value="3">拒绝</option>
+                    </select>
+
+                </dd>
+            </dl>
+
+
+
+            <div class="bot"><a href="JavaScript:void(0);" onclick="checkUserUpdate();" class="ncap-btn-big ncap-btn-green">确认提交</a></div>
+        </div>
+    </form>
+</div>
+<script type="text/javascript">
+    $(document).ready(function(){
+        var ttype = $("#ttype").val();
+        $("#t_type").find("option[value="+ttype+"]").attr("selected",true);
+        /*var otype = $("#otype").val();
+        if(ttype == 'o'){
+            $("#o_type").find("option[value="+otype+"]").attr("selected",true);
+        }*/
+
+    });
+
+
+    /*function changetype(){
+        var t_type = $("#t_type").find("option:selected").val();
+        if(t_type == 'c'){
+            $("#panda").hide();
+            $("#phgm").attr("value",0);
+            $("#phgm").show();
+        }else if(t_type == 'o'){
+            $("#phgm").hide();
+
+            /!*$("#o_type").removeAttr('selected');*!/
+            $("#panda").show();
+        }else if(t_type == 'g'){
+            $("#panda").hide();
+            $("#phgm").hide();
+        }else{
+            $("#phgm").hide();
+            $("#phgm").hide();
+        }
+    }*/
+    function checkUserUpdate(){
+        //提交的时候检查各个值是否正确
+        /*var prize_name = $("#prize_name").val();
+        var t_type = $("#t_type").val();
+        var o_type = $("#o_type").val();
+        var prize = $("#prize").val();
+        var weight = $("#weight").val();
+        if(prize_name == ''){
+            layer.alert('奖品的名字不能为空', {icon: 2});  //alert(error);
+            return false;
+        }
+        if(t_type == ''){
+            layer.alert('奖品类型不能为空', {icon: 2});  //alert(error);
+            return false;
+        }
+
+        if(weight == ''){
+            layer.alert('中奖概率不能为空', {icon: 2});  //alert(error);
+            return false;
+        }
+        if(t_type == 'c'){
+            if(prize == '' || prize == 0){
+                layer.alert('奖品类型不能为空或0', {icon: 2});  //alert(error);
+                return false;
+            }
+        }else if(t_type == 'o'){
+            if(o_type == ''){
+                layer.alert('熊猫类型不能为空', {icon: 2});  //alert(error);
+                return false;
+            }
+        }*/
+
+        $('#user_form').submit();
+    }
+</script>
+</body>
+</html>

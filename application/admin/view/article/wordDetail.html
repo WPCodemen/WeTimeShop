@@ -1,0 +1,90 @@
+<include file="public/layout" />
+<style>
+    td{height:40px;line-height:40px; padding-left:20px;}
+    .span_1{
+        float:left;
+        margin-left:0px;
+        height:130px;
+        line-height:130px;
+    }
+    .span_1 ul{list-style:none;padding:0px;}
+    .span_1 ul li{
+        border:1px solid #CCC;
+        height:40px;
+        padding:0px 10px;
+        margin-left:-1px;
+        margin-top:-1px;
+        line-height:40px;
+    }
+</style>
+<body style="background-color: #FFF; overflow: auto;">
+<div id="toolTipLayer" style="position: absolute; z-index: 9999; display: none; visibility: visible; left: 95px; top: 573px;"></div>
+<div id="append_parent"></div>
+<div id="ajaxwaitid"></div>
+<div class="page">
+    <div class="fixed-bar">
+    
+        <div class="item-title"><a class="back" href="javascript:history.back();" title="返回列表"><i class="fa fa-arrow-circle-o-left"></i></a>
+            <div class="subject">
+                <h3>用户留言</h3>
+                <h5>网站系统会员查看用户留言</h5>
+            </div>
+        </div>
+    </div>
+    <form class="form-horizontal" id="user_form" method="post">
+        <div class="ncap-form-default">
+            <dl class="row">
+                <dt class="tit">
+                    <label>留言用户名</label>
+                </dt>
+                <dd class="opt">
+                    <input class="input-txt valid" name="user_name" value="{$leave_word.user_name}"  type="text">
+                    
+                </dd>
+            </dl>
+            <dl class="row">
+                <dt class="tit">
+                    <label>留言时间</label>
+                </dt>
+                <dd class="opt">
+                    <input class="input-txt valid" readonly="readonly" name="create_time" value="{$leave_word.create_time|date='Y-m-d H:i:s',###}"  type="text">
+                    
+                </dd>
+            </dl>
+            <dl style="height:200px;">
+                <dt class="tit">
+                    <label>留言内容</label>
+                </dt>
+                <dd class="opt">
+                    <textarea style="height:190px;" cols="50" rows="80" readonly="">{$leave_word.content}&nbsp; </textarea>
+                </dd>
+            </dl>
+            
+            <!-- <div class="bot"><a href="JavaScript:void(0);" onclick="checkUserUpdate();" class="ncap-btn-big ncap-btn-green">确认提交</a></div> -->
+        </div>
+    </form>
+</div>
+<script type="text/javascript">
+    function checkUserUpdate(){
+        
+        /*var mobile = $('input[name="mobile"]').val();
+        var password = $('input[name="password"]').val();
+        var password2 = $('input[name="password2"]').val();
+
+        var error ='';
+        if(password != password2){
+            error += "两次密码不一样\n";
+        }
+      
+        if(!checkMobile(mobile) && mobile != ''){
+            error += "手机号码填写有误\n";
+        }
+        if(error){
+            layer.alert(error, {icon: 2});  //alert(error);
+            return false;
+        }*/
+        $('#user_form').submit();
+    }
+</script>
+</body>
+</html>
