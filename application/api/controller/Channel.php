@@ -43,21 +43,13 @@ class Channel extends MobileBase {
 					$channel_cate[$kk]['sub_menu'][$mk]['sub_goods'] = empty($sub_goods[$vo['id']]) ? array() : $sub_goods[$vo['id']];
 				}
 			}
-		}	
-		//echo '<pre>';
-		//print_r($channel_cate);
-		//exit;
+		}
 		$this->assign('parent_name', $this->cateTrre[$cat_id]['name']);
 		$this->assign('channel_cate',$channel_cate);
 		return $this->fetch();
 	}
 	
 	public function test(){
-//  		$wx_user = M('wx_user')->find();
-//  		$jssdk = new JssdkLogic($wx_user['appid'],$wx_user['appsecret']);
-//  		$order = M('order')->where(array('order_id'=>24))->find();
-//  		$order['goods_name'] = M('order_goods')->where(array('order_id'=>$order['order_id']))->getField('goods_name');
-//  		$jssdk->send_template_message($order);
 		send_wx_msg();
  		exit;
 	}
